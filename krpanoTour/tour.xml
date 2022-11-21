@@ -69,7 +69,27 @@
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
 
+	<!--//////////////////////////////////////////////////////////////////////
+	Actions/Funcionalities
+	////////////////////////////////////////////////////////////////////// -->
 
+	<action name="alpha_enable_layer">
+        	set(layer[%1].alpha, %2);
+        	set(layer[%1].enabled, %3);   
+    	</action>
+
+    	<action name="alpha_enable">
+        	set(hotspot[%1].alpha, %2);
+        	set(hotspot[%1].enabled, %3); 
+			set(hotspot[%4].alpha, %2);
+	
+		<!--//////////////////////////////////////////////////////////////////////
+	Actions/Functionalitys End
+	//////////////////////////////////////////////////////////////////////-->
+
+	<!--//////////////////////////////////////////////////////////////////////
+	Scenes
+	//////////////////////////////////////////////////////////////////////-->
 	
 	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="" thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		
@@ -82,6 +102,8 @@
 		<image>
 			<cube url="panos/herbstwald_panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
 		</image>
+
+		<layer>
 
 	</scene>
 

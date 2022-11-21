@@ -1,0 +1,50 @@
+body{
+    text-align: center;
+    margin: auto;
+}
+
+.infoBox{
+    border: 3px solid rgba(86, 43, 17, 0.825);
+    background-color: rgba(255, 255, 255, 0.768);
+    border-radius: 10px;
+    width: 50%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.infoText{
+    margin-top: 40px;
+    font-size: xx-large;
+}
+
+button{
+    width:100px;
+    padding: 8px;
+    border-color: grey;
+    border-radius: 20px;
+    margin-top: 60px;
+    background-color: rgba(86, 43, 17, 0.825);
+    color: white;
+
+}
+.commentBox{
+    background-color: rgba(255, 255, 255, 0.768); 
+    border: 3px solid rgba(86, 43, 17, 0.825);
+    border-radius: 10px;
+    width: 250px;
+    padding: 10px;
+    float:right;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.hotspot img{
+    width: 50px;
+}
+
+#hotspot_container{
+    z-index: 1;
+    position: absolute;
+}
