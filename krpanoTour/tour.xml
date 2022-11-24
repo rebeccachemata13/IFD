@@ -1,6 +1,7 @@
 ﻿<krpano version="1.20.11" title="Virtual Tour">
 
 	<include url="skin/vtourskin.xml" />
+	<include url="included_xml_files/modus_select.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -76,12 +77,13 @@
 	<action name="alpha_enable_layer">
         	set(layer[%1].alpha, %2);
         	set(layer[%1].enabled, %3);   
-    	</action>
+    </action>
 
-    	<action name="alpha_enable">
+    <action name="alpha_enable">
         	set(hotspot[%1].alpha, %2);
         	set(hotspot[%1].enabled, %3); 
 			set(hotspot[%4].alpha, %2);
+	</action>
 	
 		<!--//////////////////////////////////////////////////////////////////////
 	Actions/Functionalitys End
@@ -102,8 +104,6 @@
 		<image>
 			<cube url="panos/herbstwald_panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
 		</image>
-
-		<layer>
 
 	</scene>
 

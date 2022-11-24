@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VR Forest Explorer</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="../build/Main.js" defer></script>
     <script src="../scripts/HotspotPositioner.js" defer></script>
     <style> 
     body{
         background-image:url(../images/Karte_Donau_unterschiedlicheKonturen.png);
-        background-repeat: repeat;
-        background-size: cover;
+        background-repeat:no-repeat;
+        
     }
     </style>
 </head>
 <body>
-    <div class="commentBox">
+    <div class="commentBox" id="firstCommentBox">
         <p>Schön, dass du dich entschieden hast im Wald spazieren zu gehen.
             Klicke nun auf den ersten Hotspot, um deine Waldtour zu starten.
         </p>
+        <button class="weiter_button" id="first_weiter_button">Weiter</button>
     </div>
+
+    <div id="infoIcon"></div>
 
     <div id="herbstwaldDiv" class="hotspot">
         <div id="hotspotContainer">
             <br>
             <br>
-            <img class="spot_img" id="herbstwaldHotspotImg" src="../ui/marker_hotspot.png">
+            <a id="tour_link" class="disabled" href="https://rebeccachemata13.github.io/IFD/krpanoTour/tour.html"><img class="spot_img" id="herbstwaldHotspotImg" src="../ui/marker_hotspot.png"></a>
         </div>
     </div>
 </body>
