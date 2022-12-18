@@ -148,11 +148,16 @@
             if(get(mode) == "vr",
                 apply_popup_delete();
                 alpha_enable('cardboard_instructions', '1', 'false');
+                
 
             ,
                 apply_popup_delete();
                 loadscene(scene_herbstwald_panorama, null, MERGE, BLEND(0.6));
+                alpha_enable('info_hotspot_icon', '1', 'true');
+                alpha_enable('info_text', '1', 'false');
             );
+
+           
     </action>
 
     <action name= "enterVR_after_instructions">
@@ -160,8 +165,12 @@
         removehotspot(understood_button);
         webvr.enterVR();
         trace("entered_vr");
+        alpha_enable('info_hotspot_icon', '1', 'true');
+        alpha_enable('info_text', '1', 'false');
 
     </action>
+
+
 
 
 

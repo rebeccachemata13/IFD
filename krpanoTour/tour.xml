@@ -2,6 +2,7 @@
 
 	<include url="skin/vtourskin.xml" />
 	<include url="included_xml_files/modus_select.xml" />
+	<include url="included_xml_files/instructions.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -84,6 +85,8 @@
         	set(hotspot[%1].enabled, %3); 
 			set(hotspot[%4].alpha, %2);
 	</action>
+
+	
 	
 		<!--//////////////////////////////////////////////////////////////////////
 	Actions/Functionalitys End
@@ -105,7 +108,47 @@
 			<cube url="panos/herbstwald_panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
 		</image>
 
+		<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="25" atv="17" alpha="0" enabled="false" 
+			onclick="random_info('Wusstest du dass...')"
+		/>
+
+		<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="25" atv="17" alpha="0" enabled="false" 
+			onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"
+		/>
+
+		<hotspot name="info_text" style="skin_hotspotstyle_info_text" html="Fokussiere das weiße Plus in der Mitte auf Objekte um Aktionen auszuführen"
+		ath="0" atv="0" alpha="0" enabled="false"/>
+
+		<hotspot name="info_text_moving" style="skin_hotspotstyle_info_text" html="Mithilfe der Pfeile bewegst du dich im Wald an verschiedene Stellen.
+			Fokussiere den Pfeil um dich zu bewegen"
+		ath="0" atv="0" alpha="0" enabled="false"/>
+
 	</scene>
+
+	<scene name="scene_herbstwald_panorama_2" title="herbstwald_panorama_2" 
+		onstart="alpha_enable('info_text_finished', '1', 'false'); delayedcall(7, removehotspot(info_text_finished));" 
+		thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/herbstwald_panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/herbstwald_panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
+		</image>
+
+	<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-50" atv="33" alpha="1" enabled="true" 
+		onclick="random_info('Wusstest du dass...')"
+	/>
+	<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="25" atv="17" alpha="1" enabled="true" 
+		onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"
+	/>
+
+	</scene>
+
+	
 
 
 </krpano>

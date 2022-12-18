@@ -255,17 +255,39 @@
 	<style name="skin_thumbtext_style" type="text" align="bottom" width="100%" y="5" enabled="false" bg="false" bgborder="false" css="calc:skin_settings.design_text_css + ' text-align:center; font-size:10px;'" textshadow="get:skin_settings.design_text_shadow" />
 
 	<!-- skin_hotspotstyle - style for the hotspots -->
-	<style name="skin_hotspotstyle" url="vtourskin_hotspot.png" edge="top" distorted="true"
+	<style name="skin_hotspotstyle_arrow" url="Icons_Pfeil.png" edge="top" distorted="true"
 	       tooltip=""
 	       linkedscene=""
 	       linkedscene_lookat=""
 	       onclick="skin_hotspotstyle_click();"
 	       depth="1000"
-	       scale="0.5"
-	       onover.addevent="tween(scale,0.55);"
-	       onout.addevent="tween(scale,0.5);"
+	       scale="0.8"
+	       onover.addevent="tween(scale,1);"
+	       onout.addevent="tween(scale,0.8);"
+	       onloaded.addevent="skin_hotspotstyle_setup();"
+	/>
+
+    <style name="skin_hotspotstyle_info" url="Icons_Info.png" edge="top" distorted="true"
+	       tooltip=""
+	       linkedscene=""
+	       linkedscene_lookat=""
+	       onclick="skin_hotspotstyle_click();"
+	       depth="1000"
+	       scale="0.8"
+	       onover.addevent="tween(scale,1);"
+	       onout.addevent="tween(scale,0.8);"
 	       onloaded.addevent="skin_hotspotstyle_setup();"
 	       />
+
+	<style name="skin_hotspotstyle_info_text" type="text" edge="top" distorted="true"
+		   css="font-family: Calibri; color:black; text-align: center; font-size: x-large; padding:10px"
+		   width= "300px"
+           height= "150px"
+		   enabled="false"
+	/>
+
+
+	
 
 	<action name="skin_hotspotstyle_setup" scope="local">
 		if(isvalue(caller.linkedscene) AND skin_settings.tooltips_hotspots,
@@ -380,12 +402,12 @@
 	</layer> -->
 
 	<!-- previous/next scene buttons for the hidden skin mode -->
-	<layer name="skin_btn_prev_fs" keep="true" type="container" align="lefttop"  x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(-1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
+	<!-- <layer name="skin_btn_prev_fs" keep="true" type="container" align="lefttop"  x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(-1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
 		<layer name="skin_btn_prev_fs_icon" style="skin_base" crop="0|64|64|64"  align="center" scale="0.5" enabled="false" />
 	</layer>
 	<layer name="skin_btn_next_fs" keep="true" type="container" align="righttop" x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(+1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
 		<layer name="skin_btn_next_fs_icon" style="skin_base" crop="64|64|64|64" align="center" scale="0.5" enabled="false" />
-	</layer>
+	</layer> -->
 
 
 	<!-- gyro plugin -->
