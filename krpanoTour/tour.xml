@@ -3,6 +3,7 @@
 	<include url="skin/vtourskin.xml" />
 	<include url="included_xml_files/modus_select.xml" />
 	<include url="included_xml_files/instructions.xml" />
+	<include url="included_xml_files/inventar_handler.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -75,6 +76,13 @@
 	Actions/Funcionalities
 	////////////////////////////////////////////////////////////////////// -->
 
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene["1"].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+		
+	</action>
+
 	<action name="alpha_enable_layer">
         	set(layer[%1].alpha, %2);
         	set(layer[%1].enabled, %3);   
@@ -96,7 +104,7 @@
 	Scenes
 	//////////////////////////////////////////////////////////////////////-->
 	
-	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="" thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<!-- <scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="" thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -123,7 +131,7 @@
 			Fokussiere den Pfeil um dich zu bewegen"
 		ath="0" atv="0" alpha="0" enabled="false"/>
 
-	</scene>
+	</scene> -->
 
 	<scene name="scene_herbstwald_panorama_2" title="herbstwald_panorama_2" 
 		onstart="alpha_enable('info_text_finished', '1', 'false'); delayedcall(7, removehotspot(info_text_finished));" 
@@ -144,6 +152,16 @@
 	/>
 	<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="25" atv="17" alpha="1" enabled="true" 
 		onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"
+	/>
+	<hotspot name="mushroom_hotspot" 
+		url="/images/mushroom.png"
+		alpha="0.7"
+		onclick= "toggleInventar()"
+		width= "15px"
+		height= "20px"
+		atv= "50"
+		ath="-190"
+		distorted="true"
 	/>
 
 	</scene>

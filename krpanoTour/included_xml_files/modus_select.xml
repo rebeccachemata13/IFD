@@ -1,6 +1,6 @@
 <krpano>
 
-<action name="calculateCenter">
+<!-- <action name="calculateCenter">
         set(layer["form"].x, calc(stagewidth/2));
         set(layer["form"].y, calc(stageheight/2));
 </action>
@@ -168,7 +168,7 @@
         alpha_enable('info_hotspot_icon', '1', 'true');
         alpha_enable('info_text', '1', 'false');
 
-    </action>
+    </action> -->
 
 
 
