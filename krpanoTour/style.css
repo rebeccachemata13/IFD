@@ -7,7 +7,7 @@ body{
 
 .infoBox{
     border: 10px solid #3f2722;
-    background: url("krpanoTour/images/holz.png");
+    background: url("images/holz.png");
     background-repeat:no-repeat;
     background-size: cover;
     width: 35%;
