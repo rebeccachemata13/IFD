@@ -1,43 +1,54 @@
 body{
     text-align: center;
     margin: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #3f2722;
 }
 
 .infoBox{
-    border: 3px solid rgba(86, 43, 17, 0.825);
-    background-color: rgba(255, 255, 255, 0.768);
-    border-radius: 10px;
-    width: 50%;
-    height: 300px;
+    border: 10px solid #3f2722;
+    background: url("/images/holz.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 35%;
+    height: 350px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 150px;
+    margin-top: 300px;
 }
 
 .infoText{
-    margin-top: 40px;
-    font-size: xx-large;
+    margin-top: 45px;
+    color: #3f2722;
+}
+
+p {
+    font-size: large;
+    font-weight: 500;
 }
 
 button{
-    width:100px;
-    padding: 8px;
+    width:150px;
+    padding: 10px;
     border-color: grey;
-    border-radius: 20px;
     margin-top: 60px;
-    background-color: rgba(86, 43, 17, 0.825);
+    background-color: #3f2722;
     color: white;
 
 }
 .commentBox{
-    background-color: #ffffffc4; 
-    border: 3px solid rgba(86, 43, 17, 0.825);
-    border-radius: 10px;
+    background: url("/images/holz.png");
+    border: 7px solid #3f2722;;
     width: 250px;
     padding: 10px;
     float:right;
     margin-right: 30px;
     margin-top: 30px;
+}
+
+.info_comment{
+    font-size: large;
+    font-weight: 500;
 }
 
 .hotspot img{

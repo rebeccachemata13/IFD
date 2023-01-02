@@ -1,18 +1,3 @@
-<krpano>
-<layer name="Inventar"
-        type="text"
-        html= "data:stuff"
-        bgalpha= "0.8"
-        bgcolor = "0xffffff"
-        css="color:#FFFFFF; font-family: Calibri; font-size: x-large; cursor:context-menu; padding: 30px;"
-        enabled="true"
-        edge="center"
-        keep= "true"
-        width= "560px"
-        height= "510px"
-        alpha= "1"
-        interactivecontent= "true"
-        x=""
-        y=""
-    >   
-</krpano>
+<!-- <krpano>
+
+</krpano> -->

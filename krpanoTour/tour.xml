@@ -3,7 +3,7 @@
 	<include url="skin/vtourskin.xml" />
 	<include url="included_xml_files/modus_select.xml" />
 	<include url="included_xml_files/instructions.xml" />
-	<include url="included_xml_files/inventar_handler.xml" />
+	<!-- <include url="included_xml_files/inventar_handler.xml" /> -->
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -77,7 +77,7 @@
 	////////////////////////////////////////////////////////////////////// -->
 
 	<action name="startup" autorun="onstart">
-		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene["1"].name); );
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene["0"].name); );
 		loadscene(get(startscene), null, MERGE);
 		if(startactions !== null, startactions() );
 		
@@ -104,7 +104,7 @@
 	Scenes
 	//////////////////////////////////////////////////////////////////////-->
 	
-	<!-- <scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="" thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="" thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -131,7 +131,7 @@
 			Fokussiere den Pfeil um dich zu bewegen"
 		ath="0" atv="0" alpha="0" enabled="false"/>
 
-	</scene> -->
+	</scene> 
 
 	<scene name="scene_herbstwald_panorama_2" title="herbstwald_panorama_2" 
 		onstart="alpha_enable('info_text_finished', '1', 'false'); delayedcall(7, removehotspot(info_text_finished));" 

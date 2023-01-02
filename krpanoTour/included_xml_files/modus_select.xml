@@ -1,6 +1,6 @@
 <krpano>
 
-<!-- <action name="calculateCenter">
+<action name="calculateCenter">
         set(layer["form"].x, calc(stagewidth/2));
         set(layer["form"].y, calc(stageheight/2));
 </action>

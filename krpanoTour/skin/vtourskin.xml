@@ -261,9 +261,9 @@
 	       linkedscene_lookat=""
 	       onclick="skin_hotspotstyle_click();"
 	       depth="1000"
-	       scale="0.8"
-	       onover.addevent="tween(scale,1);"
-	       onout.addevent="tween(scale,0.8);"
+	       scale="0.5"
+	       onover.addevent="tween(scale,0.7);"
+	       onout.addevent="tween(scale,0.5);"
 	       onloaded.addevent="skin_hotspotstyle_setup();"
 	/>
 
@@ -273,9 +273,9 @@
 	       linkedscene_lookat=""
 	       onclick="skin_hotspotstyle_click();"
 	       depth="1000"
-	       scale="0.8"
-	       onover.addevent="tween(scale,1);"
-	       onout.addevent="tween(scale,0.8);"
+	       scale="0.5"
+	       onover.addevent="tween(scale,0.7);"
+	       onout.addevent="tween(scale,0.5);"
 	       onloaded.addevent="skin_hotspotstyle_setup();"
 	       />
 
