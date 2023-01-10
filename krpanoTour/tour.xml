@@ -154,7 +154,7 @@
 		onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"
 	/>
 	<hotspot name="mushroom_hotspot" 
-		url="/images/mushroom.png"
+		url="https://rebeccachemata13.github.io/IFD/krpanoTour/images/mushroom.png"
 		alpha="0.7"
 		onclick= "toggleInventar()"
 		scale= "0.03"
