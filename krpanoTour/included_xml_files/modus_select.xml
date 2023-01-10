@@ -6,16 +6,14 @@
 </action>
 
 <layer name="form"
-        type="text"
-        html= "data:stuff"
-        bgalpha= "0.8"
+        url="../images/holzbrett.png"
+        bgalpha= "1"
         bgcolor = "0xffffff"
         css="color:#FFFFFF; font-family: Calibri; font-size: x-large; cursor:context-menu; padding: 30px;"
         enabled="true"
         edge="center"
         keep= "true"
-        width= "560px"
-        height= "510px"
+        scale= "1.2"
         alpha= "1"
         interactivecontent= "true"
         x=""
@@ -25,16 +23,31 @@
 
     <layer name="infotext"
             type= "text"
-            html= "Suche dir den gewünschten Modus aus, mit dem du fortfahren möchtest.
-                    Du hast später nicht mehr die Möglichkeit diesen wieder zu wechseln."
+            html= "Suchen Sie sich den gewünschten Modus aus, mit dem Sie fortfahren möchten."
             bgalpha= "0"
-            css= "font-family: Calibri; color:brown; text-align: center; font-size: x-large"
+            css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 21px; font-weight:500"
             enabled="false"
             alpha= "1"
             keep="true"
             edge="center"
             x="50%"
-            y="50%"
+            y="57%"
+            width= "400px"
+            height= "400px"
+            zorder="10"
+        /> 
+        <layer name="infotext2"
+            type= "text"
+            html= "Sie haben später nicht mehr die Möglichkeit diesen wieder zu wechseln."                      
+                    
+            bgalpha= "0"
+            css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 21px; font-weight:500"
+            enabled="false"
+            alpha= "1"
+            keep="true"
+            edge="center"
+            x="50%"
+            y="69%"
             width= "400px"
             height= "400px"
             zorder="10"
@@ -46,12 +59,12 @@
             keep="true"
             edge="center"
             x="69%"
-            y="70%"
+            y="61%"
             width= "100px"
             height= "100px"
             zorder="10"
-            onhover= "set(alpha, 0.5);"
-            onout= "set(alpha, 1);"
+            onover.addevent="tween(scale,1.2);"
+	        onout.addevent="tween(scale,1);"
             onclick= "setModus('norm');"
         />
 
@@ -61,12 +74,12 @@
             keep="true"
             edge="center"
             x="30%"
-            y="70%"
+            y="61%"
             width= "100px"
             height= "100px"
             zorder="10"
-            onhover= "set(alpha, 0.5);"
-            onout= "set(alpha, 1);"
+            onover.addevent="tween(scale,1.2);"
+	        onout.addevent="tween(scale,1);"
             onclick= "setModus('vr'); alpha_enable('cardboard_instructions', '1', 'false'); alpha_enable('understood_button', '1', 'true');"
         /> 
 
@@ -74,15 +87,15 @@
             type= "text"
             html= "Cardboard"
             bgalpha= "0"
-            css= "font-family: Calibri; color:brown; text-align: center; font-size: large"
+            css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: large; font-weight:500"
             enabled="false"
             alpha= "1"
             keep="true"
             edge="center"
             x="30%"
-            y="85%"
+            y="73%"
             width= "100px"
-            height= "20px"
+            height= "32px"
             zorder="10"
         /> 
 
@@ -90,15 +103,15 @@
             type= "text"
             html= "360°"
             bgalpha= "0"
-            css= "font-family: Calibri; color:brown; text-align: center; font-size: large"
+            css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: large; font-weight:500"
             enabled="false"
             alpha= "1"
             keep="true"
             edge="center"
             x="69%"
-            y="85%"
+            y="73%"
             width= "100px"
-            height= "20px"
+            height= "32px"
             zorder="10"
         /> 
 
@@ -106,38 +119,97 @@
 
     <hotspot name= "cardboard_instructions"
             type= "image" 
-            url= "../images/Anleitung.png"
+            url= "../images/Anleitung_1.png"
             alpha="0"
             enabled="false"
-            scale= "1"
+            scale= "1.2"
+            distorted="true"
+            ath="0" atv="0"
+            keep= "true"
+    />
+
+    <hotspot name= "cardboard_instructions2"
+            type= "image" 
+            url= "../images/Anleitung_2.png"
+            alpha="0"
+            enabled="false"
+            scale= "1.2"
+            distorted="true"
+            ath="0" atv="0"
+            keep= "true"
+    />
+
+    <hotspot name= "cardboard_instructions3"
+            type= "image" 
+            url= "../images/Anleitung_3.png"
+            alpha="0"
+            enabled="false"
+            scale= "1.2"
             distorted="true"
             ath="0" atv="0"
             keep= "true"
     />
 
     <hotspot name="understood_button"
-            type= "text"
-            html= "Verstanden"
+            url="../skin/Icon_understood_3.png"
             bgalpha= "1"
-            bgcolor= "0x964B00"
-            css= "font-family: Calibri; color:0xffffff; text-align: center; font-size: x-large; padding:10px"
             enabled="false"
             alpha= "0"
             keep="true"
             edge="center"
-            ath="0" atv="35"
+            ath="0" atv="32"
+            rx="25"
             distorted="true"
-            width= "140px"
-            height= "60px"
+            scale= "0.4"
             zorder="10"
-            onhover= "set(alpha, 0.5);"
-            onout= "set(alpha, 1);"
+            onover.addevent="tween(scale,0.5);"
+	        onout.addevent="tween(scale,0.4);"
+            onclick= "alpha_enable('cardboard_instructions2', '1', 'false'); 
+            alpha_enable('understood_button2', '1', 'true');
+            removehotspot(understood_button);
+            removehotspot(cardboard_instructions);"
+            
+        /> 
+    <hotspot name="understood_button2"
+            url="../skin/Icon_understood_3.png"
+            bgalpha= "1"
+            enabled="false"
+            alpha= "0"
+            keep="true"
+            edge="center"
+            ath="0" atv="32"
+            rx="25"
+            distorted="true"
+            scale= "0.4"
+            zorder="10"
+            onover.addevent="tween(scale,0.5);"
+	        onout.addevent="tween(scale,0.4);"
+            onclick= "alpha_enable('cardboard_instructions3', '1', 'false'); 
+            alpha_enable('understood_button3', '1', 'true');
+            removehotspot(understood_button2);
+            removehotspot(cardboard_instructions2);"
+        /> 
+    <hotspot name="understood_button3"
+            url="../skin/Icon_understood_3.png"
+            bgalpha= "1"
+            enabled="false"
+            alpha= "0"
+            keep="true"
+            edge="center"
+            ath="0" atv="32"
+            rx="25"
+            distorted="true"
+            scale= "0.4"
+            zorder="10"
+            onover.addevent="tween(scale,0.5);"
+	        onout.addevent="tween(scale,0.4);"
             onclick= "enterVR_after_instructions()"
         /> 
 
     <action name="apply_popup_delete">
         removelayer(form);
         removelayer(infotext);
+         removelayer(infotext2);
         removelayer(vr-glasses);
 		removelayer(threehundertsixty_degrees);
         removelayer(label_Cardboard);
@@ -161,8 +233,8 @@
     </action>
 
     <action name= "enterVR_after_instructions">
-        removehotspot(cardboard_instructions);
-        removehotspot(understood_button);
+        removehotspot(cardboard_instructions3);
+        removehotspot(understood_button3);
         webvr.enterVR();
         trace("entered_vr");
         alpha_enable('info_hotspot_icon', '1', 'true');

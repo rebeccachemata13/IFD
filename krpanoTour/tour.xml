@@ -3,7 +3,7 @@
 	<include url="skin/vtourskin.xml" />
 	<include url="included_xml_files/modus_select.xml" />
 	<include url="included_xml_files/instructions.xml" />
-	<!-- <include url="included_xml_files/inventar_handler.xml" /> -->
+	<include url="included_xml_files/inventar_handler.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -147,18 +147,17 @@
 			<cube url="panos/herbstwald_panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
 		</image>
 
-	<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-50" atv="33" alpha="1" enabled="true" 
+	<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-49" atv="10" alpha="1" enabled="true" 
 		onclick="random_info('Wusstest du dass...')"
 	/>
-	<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="25" atv="17" alpha="1" enabled="true" 
+	<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="70" atv="55" alpha="1" enabled="true" 
 		onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"
 	/>
 	<hotspot name="mushroom_hotspot" 
 		url="/images/mushroom.png"
 		alpha="0.7"
 		onclick= "toggleInventar()"
-		width= "15px"
-		height= "20px"
+		scale= "0.03"
 		atv= "50"
 		ath="-190"
 		distorted="true"
