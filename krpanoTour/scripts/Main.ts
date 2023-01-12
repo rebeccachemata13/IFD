@@ -8,6 +8,8 @@ namespace VRExplorer {
     let marker: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("tour_link");
     console.log(marker);
 
+    let hotspotHuette: HTMLImageElement = <HTMLImageElement>document.getElementById("huetteDiv");
+
 
     firstWeiterButton.addEventListener("click", firstHotspotClick);
 
@@ -26,6 +28,13 @@ namespace VRExplorer {
         marker.classList.add("disabled");
         firstCommentBox.classList.remove("invisibleDisabled");
         infoIcon.remove();
+    }
+
+    function enableHotspots(hotspotNumber: number): void {
+        if (hotspotNumber == 1) {
+            hotspotHuette.classList.remove("invisibleDisabled");
+            firstHotspotClick();
+        }
     }
 
 }
