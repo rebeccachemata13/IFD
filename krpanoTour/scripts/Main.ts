@@ -31,6 +31,7 @@ namespace VRExplorer {
     }
 
     function enableHotspots(hotspotNumber: number): void {
+        console.log("Second Hotspot enabled");
         if (hotspotNumber == 1) {
             hotspotHuette.classList.remove("invisibleDisabled");
             firstHotspotClick();

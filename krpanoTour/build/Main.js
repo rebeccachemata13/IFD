@@ -25,6 +25,7 @@ var VRExplorer;
         infoIcon.remove();
     }
     function enableHotspots(hotspotNumber) {
+        console.log("Second Hotspot enabled");
         if (hotspotNumber == 1) {
             hotspotHuette.classList.remove("invisibleDisabled");
             firstHotspotClick();
