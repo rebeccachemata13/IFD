@@ -117,7 +117,7 @@
 		</image>
 
 		<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="25" atv="17" alpha="0" enabled="false" 
-			onclick="random_info('Wusstest du dass...')"
+			onclick="random_info('Wusstest du dass Wälder länger halten wenn man sie nicht anzündet?')" 
 		/>
 
 		<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="25" atv="17" alpha="0" enabled="false" 
@@ -148,7 +148,7 @@
 		</image>
 
 	<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-49" atv="10" alpha="1" enabled="true" 
-		onclick="random_info('Wusstest du dass...')"
+		onclick="random_info('Wusstest du dass Wälder länger halten wenn man sie nicht anzündet?')" 
 	/>
 	<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="70" atv="55" alpha="1" enabled="true" 
 		onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"

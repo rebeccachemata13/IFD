@@ -7,8 +7,12 @@
     
     addhotspot(random_info_spot);
     set(hotspot[random_info_spot].type, text);
-    set(hotspot[random_info_spot].css, 'font-family: Calibri; color:black; text-align: center; font-size: x-large; padding:10px');
+    set(hotspot[random_info_spot].css, 'font-family: Calibri; color:#3f2722; text-align: center; font-size: x-large; padding:10px; font-weight:800;');
+    set(hotspot[random_info_spot].bgborder, 4);
+    set(hotspot[random_info_spot].bgcolor, 0xeabe8f);
     set(hotspot[random_info_spot].alpha, 1);
+    set(hotspot[random_info_spot].width, 300px);
+    set(hotspot[random_info_spot].height, 200px);
     set(hotspot[random_info_spot].html, %1);
     set(hotspot[random_info_spot].atv, get(view.vlookat));
     set(hotspot[random_info_spot].ath, get(view.hlookat));
@@ -16,19 +20,22 @@
     set(hotspot[random_info_spot].distorted, false);
     set(hotspot[random_info_spot].keep, true);
     set(hotspot[random_info_spot].enabled, false);
+    set(hotspot[random_info_spot].distorted, true);
 
     addhotspot(weiter_button);
     set(hotspot[weiter_button].type, text);
-    set(hotspot[weiter_button].css, 'font-family: Calibri; color:black; text-align: center; font-size: medium; padding:10px');
+    set(hotspot[weiter_button].css, 'font-family: Calibri; color:white; text-align: center; font-size: medium; padding:10px');
+    set(hotspot[weiter_button].bgcolor, 0x3f2722);
     set(hotspot[weiter_button].alpha, 1);
-    set(hotspot[weiter_button].html, weiter);
-    set(hotspot[weiter_button].atv, 'calc(get(view.vlookat) + 10)');
+    set(hotspot[weiter_button].html, WEITER);
+    set(hotspot[weiter_button].atv, 'calc(get(view.vlookat) + 7)');
     set(hotspot[weiter_button].ath, get(view.hlookat));
     set(hotspot[weiter_button].zorder, 10);
     set(hotspot[weiter_button].distorted, false);
     set(hotspot[weiter_button].keep, true);
     set(hotspot[weiter_button].enabled, true);
     set(hotspot[weiter_button].onclick, instruction_moving());
+    set(hotspot[weiter_button].distorted, true);
     
     //trace(hotspot[random_info_spot].alpha);
     //trace(hotspot[random_info_spot].html);
@@ -36,10 +43,11 @@
 
 <action name="instruction_moving">
     removehotspot(random_info_spot);
-    alpha_enable(weiter_button);
+    removehotspot(weiter_button);
     alpha_enable('arrow_hotspot', '1', 'true');
     alpha_enable('info_text_moving', '1', false);
 </action>
+
 
 <hotspot name="info_text_finished" style="skin_hotspotstyle_info_text" html="Sehr gut, jetzt kannst du dich im Wald umschauen.
 		Wer weiß, vielleicht findest du ein paar Pilze?"

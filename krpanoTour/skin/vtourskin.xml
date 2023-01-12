@@ -280,9 +280,12 @@
 	       />
 
 	<style name="skin_hotspotstyle_info_text" type="text" edge="top" distorted="true"
-		   css="font-family: Calibri; color:black; text-align: center; font-size: x-large; padding:10px"
+		   css="font-family: Calibri; color:#3f2722; text-align: center; font-size: x-large; padding:10px; font-weight:800; padding-top:20px"
+		   bgcolor="0xeabe8f"
+		   bgborder="5"
+		   bordercolor="0x3f2722"
 		   width= "300px"
-           height= "150px"
+           height= "200px"
 		   enabled="false"
 	/>
 
