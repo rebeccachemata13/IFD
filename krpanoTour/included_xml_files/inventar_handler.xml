@@ -41,7 +41,7 @@
     delayedcall(4, alpha_enable('inventar', '0', 'false')); 
     delayedcall(4, alpha_enable('mushroom_hotspot', '0', 'false')); 
     delayedcall(5, alpha_enable_layer('inventar_icon', '1', 'true')); 
-    delayedcall(7, openurl("https://rebeccachemata13.github.io/IFD/krpanoTour/underpages/map.html"));
+    delayedcall(7, openurl("https://rebeccachemata13.github.io/IFD/krpanoTour/underpages/map.html#1"));
 
 </action>
 

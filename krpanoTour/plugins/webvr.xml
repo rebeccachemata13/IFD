@@ -279,7 +279,7 @@
 		);
 	</action>
 	
-	<action name="webvr_show_fakemode_info" scope="local" args="show">
+	<!-- <action name="webvr_show_fakemode_info" scope="local" args="show">
 		if(show == true,
 			addlayer(webvr_fakemode_info);
 			set(layer[webvr_fakemode_info],
@@ -294,7 +294,7 @@
 		  ,
 			removelayer(webvr_fakemode_info);
 		);
-	</action>
+	</action> -->
 	
 	
 	<!-- ensure the same scaling on mobiles (regardless if mobilescale is 0.5 or 1.0) -->
@@ -322,21 +322,21 @@
 	       onclick="webvr.enterVR();"
 	       />
 
-	<layer name="webvr_exitbutton" keep="true" vr="true"
+	<!-- <layer name="webvr_exitbutton" keep="true" vr="true"
 	       style="webvr_button_style"
 	       html="Exit VR"
 	       align="top" y="24"
 	       autoalpha="true" alpha="0.0"
 	       onclick="webvr.exitVR();"
-	       />
+	       /> -->
 
-	<layer name="webvr_setupbutton" keep="true" vr="true"
+	<!-- <layer name="webvr_setupbutton" keep="true" vr="true"
 	       style="webvr_button_style"
 	       html="VR Setup"
 	       align="bottom" y="24"
 	       autoalpha="true" alpha="0.0"
 	       onclick="vrsetup_open();"
-	       />
+	       /> -->
 
 
 	<action name="webvr_showbuttons">

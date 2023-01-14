@@ -4,6 +4,7 @@
 	<include url="included_xml_files/modus_select.xml" />
 	<include url="included_xml_files/instructions.xml" />
 	<include url="included_xml_files/inventar_handler.xml" />
+	<include url="included_xml_files/mode_differator.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -16,7 +17,7 @@
 	               gyro_keeplookingdirection="false"
 	               webvr="true"
 	               webvr_keeplookingdirection="true"
-	               webvr_prev_next_hotspots="true"
+	               webvr_prev_next_hotspots="false"
 	               autotour="false"
 	               littleplanetintro="false"
 	               followmousecontrol="false"
@@ -104,7 +105,7 @@
 	Scenes
 	//////////////////////////////////////////////////////////////////////-->
 	
-	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="" thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="textChanger()" thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -124,7 +125,7 @@
 			onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"
 		/>
 
-		<hotspot name="info_text" style="skin_hotspotstyle_info_text" html="Fokussiere das weiße Plus in der Mitte auf Objekte um Aktionen auszuführen"
+		<hotspot name="info_text" style="skin_hotspotstyle_info_text" html=""
 		ath="0" atv="0" alpha="0" enabled="false"/>
 
 		<hotspot name="info_text_moving" style="skin_hotspotstyle_info_text" html="Mithilfe der Pfeile bewegst du dich im Wald an verschiedene Stellen.
@@ -155,9 +156,9 @@
 	/>
 	<hotspot name="mushroom_hotspot" 
 		url="https://rebeccachemata13.github.io/IFD/krpanoTour/images/mushroom.png"
-		alpha="0.7"
+		alpha="1"
 		onclick= "toggleInventar()"
-		scale= "0.03"
+		scale= "0.06"
 		atv= "50"
 		ath="-190"
 		distorted="true"

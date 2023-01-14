@@ -236,10 +236,10 @@
         removehotspot(cardboard_instructions3);
         removehotspot(understood_button3);
         webvr.enterVR();
+        textChanger('vr');
         trace("entered_vr");
         alpha_enable('info_hotspot_icon', '1', 'true');
         alpha_enable('info_text', '1', 'false');
-
     </action> -->
 
 
