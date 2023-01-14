@@ -2,7 +2,7 @@
 
     <action name="textChanger" scope="local" args="mode">
         if(get(mode) == "vr",
-            set(hotspot[info_text].html, 'Fokussieren Sie das weiße Plus in der Mitte auf Objekte um Aktionen auszuführen');
+            set(hotspot[info_text].html, 'Fokussiere das weiße Plus in der Mitte auf Objekte um Aktionen auszuführen');
             set(hotspot[info_text].height, 180px);
             set(hotspot[info_text_moving].html, 'Mithilfe der Pfeile bewegst du dich im Wald an verschiedene Stellen.
 			Fokussiere den Pfeil um dich zu bewegen.');

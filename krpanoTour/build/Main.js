@@ -11,7 +11,7 @@ var VRExplorer;
     let hotspotHuette = document.getElementById("huetteDiv");
     firstWeiterButton.addEventListener("click", firstHotspotClick);
     hotspotHuette.classList.add("invisibleDisabled");
-    infoComment.innerHTML = "Schön, dass Sie sich entschieden haben im Wald spazieren zu gehen!<br><br>Klicken Sie nun auf den ersten Hotspot, um Ihre Waldtour zu starten.";
+    infoComment.innerHTML = "Schön, dass du dich entschieden hast im Wald spazieren zu gehen!<br><br>Klicke nun auf den ersten Hotspot, um deine Waldtour zu starten.";
     function firstHotspotClick() {
         marker.classList.remove("disabled");
         firstCommentBox.classList.add("invisibleDisabled");
@@ -32,7 +32,7 @@ var VRExplorer;
         console.log(location.hash);
         if (currentPickerNumber == "#1") {
             hotspotHuette.classList.remove("invisibleDisabled");
-            infoComment.innerHTML = "Super, sie haben Ihren ersten Spot geschafft und den Pilz gefunden!<br><br>Klicken Sie nun auf den zweiten Hotspot, um Ihre Waldtour fortzuführen.";
+            infoComment.innerHTML = "Super, du deinen ersten Spot geschafft und den Pilz gefunden!<br><br>Klicke nun auf den zweiten Hotspot, um deine Waldtour fortzuführen.";
             enableComment();
         }
     }

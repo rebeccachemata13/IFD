@@ -23,7 +23,7 @@
 
     <layer name="infotext"
             type= "text"
-            html= "Suchen Sie sich den gewünschten Modus aus, mit dem Sie fortfahren möchten."
+            html= "Suche dir den gewünschten Modus aus, mit dem du fortfahren möchtest."
             bgalpha= "0"
             css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 21px; font-weight:500"
             enabled="false"
@@ -38,7 +38,7 @@
         /> 
         <layer name="infotext2"
             type= "text"
-            html= "Sie haben später nicht mehr die Möglichkeit diesen wieder zu wechseln."                      
+            html= "Du hast später nicht mehr die Möglichkeit diesen wieder zu wechseln."                      
                     
             bgalpha= "0"
             css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 21px; font-weight:500"
