@@ -6,13 +6,14 @@ namespace VRExplorer {
     let infoIcon: HTMLImageElement = <HTMLImageElement>document.createElement("img");
     let firstCommentBox: HTMLDivElement = <HTMLDivElement>document.getElementById("firstCommentBox");
     let marker: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("tour_link");
-    console.log(marker);
+    let infoComment: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("info-comment");
 
     let hotspotHuette: HTMLImageElement = <HTMLImageElement>document.getElementById("huetteDiv");
 
 
     firstWeiterButton.addEventListener("click", firstHotspotClick);
-
+    hotspotHuette.classList.add("invisibleDisabled");
+    infoComment.innerHTML = "Schön, dass Sie sich entschieden haben im Wald spazieren zu gehen!<br><br>Klicken Sie nun auf den ersten Hotspot, um Ihre Waldtour zu starten.";
 
     function firstHotspotClick(): void {
         marker.classList.remove("disabled");
@@ -27,16 +28,23 @@ namespace VRExplorer {
     function enableComment(): void {
         marker.classList.add("disabled");
         firstCommentBox.classList.remove("invisibleDisabled");
+        
         infoIcon.remove();
     }
 
-    function enableHotspots(hotspotNumber: number): void {
+    function enableHotspots(): void {
         console.log("Second Hotspot enabled");
-        if (hotspotNumber == 1) {
+        let currentPickerNumber: string = location.hash;
+        console.log(location.hash);
+        
+        if (currentPickerNumber == "#1") {
             hotspotHuette.classList.remove("invisibleDisabled");
-            firstHotspotClick();
+            infoComment.innerHTML = "Super, sie haben Ihren ersten Spot geschafft und den Pilz gefunden!<br><br>Klicken Sie nun auf den zweiten Hotspot, um Ihre Waldtour fortzuführen.";
+            enableComment();
         }
     }
+
+    enableHotspots();
 
 }
 
