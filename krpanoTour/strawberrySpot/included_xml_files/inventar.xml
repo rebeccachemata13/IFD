@@ -1,0 +1,104 @@
+<krpano>
+<hotspot name="inventar_icon"
+        url="../skin/Icons_Inventar.png"
+        alpha= "0"
+        enabled= "false"
+        keep="true"
+        edge="center"
+        width= "100px"
+        height= "100px"
+        zorder="10"
+        distorted="true"
+        onover.addevent="tween(scale,1.2);"
+        onout.addevent="tween(scale,1);"
+        onclick= "toggleInventar()"
+    /> 
+
+<hotspot name="inventar_info"
+        type="text"
+        style="skin_hotspotstyle_info_text"
+        html="Sobald du auf das Inventar Icon klickst hast du die Möglichkeit deine bereits gesammelten Objekte zu sehen. An jedem Hotspot versteckt sich etwas anderes. Findest du alle Objekte?"
+        alpha= "0"
+        enabled= "false"
+        keep="true"
+        edge="center"
+        width= "300px"
+        height= "300px"
+        zorder="10"
+        ath="40"
+    /> 
+
+<hotspot name="inventar"
+        url="../skin/inventar.png"
+        alpha="0"
+        enabled="false"
+        edge="center"
+        keep= "true"
+        scale= "1.2"
+        atv= "0"
+        ath= "0"
+        distorted="true"
+    /> 
+
+<hotspot name="mushroom_hotspot" 
+		url="../images/mushroom.png"
+        
+		alpha="0"
+		scale= "0.06"
+		atv= "50"
+		ath="-190"
+		distorted="true"
+        enabled="false"
+        keep="true"
+	/>
+
+<hotspot name="close_icon" 
+		url="../skin/Icon_Close.png"
+        alpha="0"
+		scale= "0.3"
+		atv= "0"
+        ath= "0"
+		distorted="true"
+        enabled="false"
+        keep="true"
+        onover.addevent="tween(scale,0.4);"
+        onout.addevent="tween(scale,0.3);"
+        onclick= "hideInventar()"
+	/>
+
+
+
+<action name="toggleInventar">
+    alpha_enable('info_hotspot_icon', '0', 'false');
+    alpha_enable('arrow_hotspot', '0', 'false');
+    alpha_enable('inventar_icon', '0', 'false');
+    alpha_enable('inventar_info', '0', 'false');
+    alpha_enable('inventar', '1', false);
+    set(hotspot[inventar].atv, calc(get(view.vlookat) - 20));
+    set(hotspot[inventar].ath, get(view.hlookat));
+    set(hotspot[mushroom_hotspot].alpha, 1);
+    set(hotspot[mushroom_hotspot].enabled, false);
+    set(hotspot[close_icon].alpha, 1);
+    set(hotspot[close_icon].enabled, true);
+    set(hotspot[close_icon].ath, calc(get(hotspot[inventar].ath) + 27));
+    set(hotspot[close_icon].atv, calc(get(hotspot[inventar].atv) - 13));
+    set(hotspot[close_icon].ry, -30);
+     set(hotspot[close_icon].rx, -10);
+    set(hotspot[mushroom_hotspot].scale, 0.08);
+    set(hotspot[mushroom_hotspot].ath, calc(get(hotspot[inventar].ath) - 16.5));
+    set(hotspot[mushroom_hotspot].atv, calc(get(hotspot[inventar].atv) - 7.5));
+
+</action>
+
+<action name="hideInventar">
+    alpha_enable('info_hotspot_icon', '1', 'true');
+    alpha_enable('arrow_hotspot', '1', 'true');
+    alpha_enable('inventar_icon', '1', 'true');
+    alpha_enable('inventar', '0', false);
+    set(hotspot[mushroom_hotspot].alpha, 0);
+    set(hotspot[mushroom_hotspot].enabled, false);
+    set(hotspot[close_icon].alpha, 0);
+    set(hotspot[close_icon].enabled, false);
+</action>
+
+</krpano>

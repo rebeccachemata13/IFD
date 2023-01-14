@@ -1,0 +1,132 @@
+<krpano>
+
+<action name="calculateCenter">
+        set(layer["form"].x, calc(stagewidth/2));
+        set(layer["form"].y, calc(stageheight/2));
+</action>
+
+<layer name="form"
+        url="../../images/holzbrett.png"
+        bgalpha= "1"
+        bgcolor = "0xffffff"
+        css="color:#FFFFFF; font-family: Calibri; font-size: x-large; cursor:context-menu; padding: 30px;"
+        enabled="true"
+        edge="center"
+        keep= "true"
+        scale= "1.2"
+        alpha= "1"
+        interactivecontent= "true"
+        x=""
+        y=""
+        onloaded="set(x,calc(get(area.pixelwidth)/2));set(y,calc((get(area.pixelheight)/2) - 50));"
+    >   
+
+    <layer name="infotext"
+            type= "text"
+            html= "Suchen Sie sich den gewünschten Modus aus, mit dem Sie fortfahren möchten."
+            bgalpha= "0"
+            css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 21px; font-weight:500"
+            enabled="false"
+            alpha= "1"
+            keep="true"
+            edge="center"
+            x="50%"
+            y="57%"
+            width= "400px"
+            height= "400px"
+            zorder="10"
+        /> 
+        <layer name="infotext2"
+            type= "text"
+            html= "Sie haben später nicht mehr die Möglichkeit diesen wieder zu wechseln."                      
+                    
+            bgalpha= "0"
+            css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 21px; font-weight:500"
+            enabled="false"
+            alpha= "1"
+            keep="true"
+            edge="center"
+            x="50%"
+            y="69%"
+            width= "400px"
+            height= "400px"
+            zorder="10"
+        /> 
+        
+        <layer name="threehundertsixty_degrees"
+            url="../../skin/Icons_360Grad.png"
+            alpha="1"
+            keep="true"
+            edge="center"
+            x="69%"
+            y="61%"
+            width= "100px"
+            height= "100px"
+            zorder="10"
+            onover.addevent="tween(scale,1.2);"
+	        onout.addevent="tween(scale,1);"
+            onclick= "apply_popup_delete();"
+        />
+
+        <layer name="vr-glasses"
+            url="../../skin/Icons_Cardboard.png"
+            alpha= "1"
+            keep="true"
+            edge="center"
+            x="30%"
+            y="61%"
+            width= "100px"
+            height= "100px"
+            zorder="10"
+            onover.addevent="tween(scale,1.2);"
+	        onout.addevent="tween(scale,1);"
+            onclick= "webvr.enterVR(); apply_popup_delete()"
+        /> 
+
+        <layer name="label_Cardboard"
+            type= "text"
+            html= "Cardboard"
+            bgalpha= "0"
+            css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: large; font-weight:500"
+            enabled="false"
+            alpha= "1"
+            keep="true"
+            edge="center"
+            x="30%"
+            y="73%"
+            width= "100px"
+            height= "32px"
+            zorder="10"
+        /> 
+
+         <layer name="label_360"
+            type= "text"
+            html= "360°"
+            bgalpha= "0"
+            css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: large; font-weight:500"
+            enabled="false"
+            alpha= "1"
+            keep="true"
+            edge="center"
+            x="69%"
+            y="73%"
+            width= "100px"
+            height= "32px"
+            zorder="10"
+        /> 
+
+        </layer> 
+    <action name="apply_popup_delete">
+        removelayer(form);
+        removelayer(infotext);
+        removelayer(infotext2);
+        removelayer(vr-glasses);
+		removelayer(threehundertsixty_degrees);
+        removelayer(label_Cardboard);
+        removelayer(label_360);
+        alpha_enable('inventar_icon', '1', 'true');
+        alpha_enable('inventar_info', '1', 'false');
+        
+    </action>
+
+</krpano>

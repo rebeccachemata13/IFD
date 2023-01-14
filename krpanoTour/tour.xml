@@ -95,6 +95,12 @@
 			set(hotspot[%4].alpha, %2);
 	</action>
 
+	<action name="removeInfo">
+		alpha_enable('random_info_spot', '0', 'false');
+		alpha_enable('weiter_button', '0', 'false');
+		alpha_enable('info_hotspot_icon', '1', 'true');
+	</action>
+
 	
 	
 		<!--//////////////////////////////////////////////////////////////////////
@@ -135,7 +141,9 @@
 	</scene> 
 
 	<scene name="scene_herbstwald_panorama_2" title="herbstwald_panorama_2" 
-		onstart="alpha_enable('info_text_finished', '1', 'false'); delayedcall(7, removehotspot(info_text_finished));" 
+		onstart="alpha_enable('info_text_finished', '1', 'false'); 
+		delayedcall(5, removehotspot(info_text_finished));
+		delayedcall(5, set(hotspot[info_hotspot_icon].enabled, true))"
 		thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
@@ -148,12 +156,12 @@
 			<cube url="panos/herbstwald_panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
 		</image>
 
-	<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-49" atv="10" alpha="1" enabled="true" 
-		onclick="random_info('Wusstest du dass Wälder länger halten wenn man sie nicht anzündet?')" 
+	<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-49" atv="10" alpha="1" enabled="false" 
+		onclick="random_info('Wusstest du dass Wälder länger halten wenn man sie nicht anzündet?'); set(hotspot[weiter_button].onclick, removeInfo())" 
 	/>
-	<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="70" atv="55" alpha="1" enabled="true" 
+	<!-- <hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="70" atv="55" alpha="1" enabled="true" 
 		onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"
-	/>
+	/> -->
 	<hotspot name="mushroom_hotspot" 
 		url="https://rebeccachemata13.github.io/IFD/krpanoTour/images/mushroom.png"
 		alpha="1"

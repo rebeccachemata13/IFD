@@ -11,22 +11,6 @@
         distorted="true"
     />  
 
-<layer name="inventar_icon"
-        url="../skin/Icons_Inventar.png"
-        alpha= "0"
-        enabled= "false"
-        keep="true"
-        edge="center"
-        x="90%"
-        y="10%"
-        width= "100px"
-        height= "100px"
-        zorder="10"
-        onover.addevent="tween(scale,1.2);"
-        onout.addevent="tween(scale,1);"
-        onclick= "toggleInventar()"
-    /> 
-
 <action name="toggleInventar">
     alpha_enable('inventar', '1', false);
     set(hotspot[inventar].atv, calc(get(view.vlookat) - 20));
@@ -40,8 +24,8 @@
     jscall("VRExplorer.Main.enableHotspots(1)");
     delayedcall(4, alpha_enable('inventar', '0', 'false')); 
     delayedcall(4, alpha_enable('mushroom_hotspot', '0', 'false')); 
-    delayedcall(5, alpha_enable_layer('inventar_icon', '1', 'true')); 
-    delayedcall(7, openurl("https://rebeccachemata13.github.io/IFD/krpanoTour/underpages/map.html#1"));
+    <!-- delayedcall(5, alpha_enable_layer('inventar_icon', '1', 'true'));  -->
+    delayedcall(6, openurl("https://rebeccachemata13.github.io/IFD/krpanoTour/underpages/map.html#1", _self));
 
 </action>
 

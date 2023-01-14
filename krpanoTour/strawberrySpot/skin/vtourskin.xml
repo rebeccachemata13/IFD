@@ -274,6 +274,40 @@
 		);
 	</action>
 
+	<style name="skin_hotspotstyle_arrow" url="Icons_Pfeil.png" edge="top" distorted="true"
+	       tooltip=""
+	       linkedscene=""
+	       linkedscene_lookat=""
+	       onclick="skin_hotspotstyle_click();"
+	       depth="1000"
+	       scale="0.5"
+	       onover.addevent="tween(scale,0.7);"
+	       onout.addevent="tween(scale,0.5);"
+	       onloaded.addevent="skin_hotspotstyle_setup();"
+	/>
+
+    <style name="skin_hotspotstyle_info" url="Icons_Info.png" edge="top" distorted="true"
+	       tooltip=""
+	       linkedscene=""
+	       linkedscene_lookat=""
+	       onclick="skin_hotspotstyle_click();"
+	       depth="1000"
+	       scale="0.5"
+	       onover.addevent="tween(scale,0.7);"
+	       onout.addevent="tween(scale,0.5);"
+	       onloaded.addevent="skin_hotspotstyle_setup();"
+	       />
+
+	<style name="skin_hotspotstyle_info_text" type="text" edge="top" distorted="true"
+		   css="font-family: Calibri; color:#3f2722; text-align: center; font-size: x-large; padding:10px; font-weight:800; padding-top:20px"
+		   bgcolor="0xeabe8f"
+		   bgborder="5"
+		   bordercolor="0x3f2722"
+		   width= "300px"
+           height= "200px"
+		   enabled="false"
+	/>
+
 	<action name="skin_hotspotstyle_click" scope="local">
 		if(isvalue(caller.linkedscene),
 			copy(hs_linkedscene, caller.linkedscene);
@@ -313,7 +347,7 @@
 
 
 	<!-- skin layout -->
-	<layer name="skin_layer" keep="true" type="container" align="top" width="get:skin_settings.layout_width" maxwidth="get:skin_settings.layout_maxwidth" height="100%" maskchildren="true" visible="false" bgcapture="false" zorder="1">
+	<!-- <layer name="skin_layer" keep="true" type="container" align="top" width="get:skin_settings.layout_width" maxwidth="get:skin_settings.layout_maxwidth" height="100%" maskchildren="true" visible="false" bgcapture="false" zorder="1">
 		<layer name="skin_scroll_window" type="container" align="bottom" width="100%" height="100%" x="0" y="calc:skin_settings.controlbar_offset + skin_settings.controlbar_height - skin_settings.controlbar_overlap" maskchildren="true" onloaded="skin_calc_opened_closed();" zorder="1">
 			<layer name="skin_scroll_layer" type="container" align="bottom" width="get:skin_settings.controlbar_width" height="100%" x="0" y="200" y_offset="get:skin_settings.controlbar_overlap" accuracy="1" bgalpha="get:skin_settings.design_bgalpha" bgcolor="get:skin_settings.design_bgcolor" bgborder="get:skin_settings.design_bgborder" bgroundedge="get:skin_settings.design_bgroundedge" bgshadow="get:skin_settings.design_bgshadow">
 				<layer name="skin_title" type="text" align="lefttop" edge="leftbottom" x="4" y="0" zorder="4" enabled="false" bg="false" css="calc:skin_settings.design_text_css + ' text-align:left; font-style:italic; font-size:12px;'" textshadow="get:skin_settings.design_text_shadow" visible="false" onautosized="skin_video_updateseekbarwidth();" />
@@ -377,15 +411,15 @@
 		<layer name="skin_loadingtext" type="text" align="center" x="5" y="-5" html="get:skin_settings.loadingtext" visible="false" bg="false" enabled="false" css="calc:skin_settings.design_text_css + ' text-align:center; font-style:italic; font-size:22px;'" textshadow="get:skin_settings.design_text_shadow" />
 		<layer name="skin_buttonglow"  style="skin_base" crop="64|384|64|64" align="center" x="0" y="1" scale="1.0" alpha="0.0" visible="false" enabled="false" />
 		<layer name="skin_thumbborder" type="container" x="get:skin_settings.design_thumbborder_padding" y="get:skin_settings.design_thumbborder_padding" width="calc:skin_settings.thumbs_width - 2*skin_settings.design_thumbborder_padding" height="calc:skin_settings.thumbs_height - 2*skin_settings.design_thumbborder_padding" visible="false" enabled="false" align="lefttop" bgborder="get:skin_settings.design_thumbborder_bgborder" bgroundedge="get:skin_settings.design_thumbborder_bgroundedge" />
-	</layer>
+	</layer> -->
 
 	<!-- previous/next scene buttons for the hidden skin mode -->
-	<layer name="skin_btn_prev_fs" keep="true" type="container" align="lefttop"  x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(-1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
+	<!-- <layer name="skin_btn_prev_fs" keep="true" type="container" align="lefttop"  x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(-1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
 		<layer name="skin_btn_prev_fs_icon" style="skin_base" crop="0|64|64|64"  align="center" scale="0.5" enabled="false" />
 	</layer>
 	<layer name="skin_btn_next_fs" keep="true" type="container" align="righttop" x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(+1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
 		<layer name="skin_btn_next_fs_icon" style="skin_base" crop="64|64|64|64" align="center" scale="0.5" enabled="false" />
-	</layer>
+	</layer> -->
 
 
 	<!-- gyro plugin -->

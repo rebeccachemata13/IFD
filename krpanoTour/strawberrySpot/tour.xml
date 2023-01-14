@@ -1,6 +1,8 @@
 ﻿<krpano version="1.20.11" title="Virtual Tour">
 
 	<include url="skin/vtourskin.xml" />
+	<include url="included_xml_files/modus_select_2.xml" />
+	<include url="included_xml_files/inventar.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -69,6 +71,67 @@
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
 
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene["0"].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+		
+	</action>
+
+	<action name="alpha_enable_layer">
+        	set(layer[%1].alpha, %2);
+        	set(layer[%1].enabled, %3);   
+    </action>
+
+    <action name="alpha_enable">
+        	set(hotspot[%1].alpha, %2);
+        	set(hotspot[%1].enabled, %3); 
+			set(hotspot[%4].alpha, %2);
+	</action>
+
+	<action name="random_info">
+    //showlog();
+    alpha_enable('info_text', '1'; 'false');
+    alpha_enable('info_hotspot_icon', '0'; 'false');
+    
+    addhotspot(random_info_spot);
+    set(hotspot[random_info_spot].type, text);
+    set(hotspot[random_info_spot].css, 'font-family: Calibri; color:#3f2722; text-align: center; font-size: x-large; padding:10px; font-weight:800;');
+    set(hotspot[random_info_spot].bgborder, 4);
+    set(hotspot[random_info_spot].bgcolor, 0xeabe8f);
+    set(hotspot[random_info_spot].alpha, 1);
+    set(hotspot[random_info_spot].width, 300px);
+    set(hotspot[random_info_spot].height, 200px);
+    set(hotspot[random_info_spot].html, %1);
+    set(hotspot[random_info_spot].atv, get(view.vlookat));
+    set(hotspot[random_info_spot].ath, get(view.hlookat));
+    set(hotspot[random_info_spot].zorder, 10);
+    set(hotspot[random_info_spot].distorted, false);
+    set(hotspot[random_info_spot].keep, true);
+    set(hotspot[random_info_spot].enabled, false);
+    set(hotspot[random_info_spot].distorted, true);
+
+    addhotspot(weiter_button);
+    set(hotspot[weiter_button].type, text);
+    set(hotspot[weiter_button].css, 'font-family: Calibri; color:white; text-align: center; font-size: medium; padding:10px');
+    set(hotspot[weiter_button].bgcolor, 0x3f2722);
+    set(hotspot[weiter_button].alpha, 1);
+    set(hotspot[weiter_button].html, WEITER);
+    set(hotspot[weiter_button].atv, 'calc(get(view.vlookat) + 7)');
+    set(hotspot[weiter_button].ath, get(view.hlookat));
+    set(hotspot[weiter_button].zorder, 10);
+    set(hotspot[weiter_button].distorted, false);
+    set(hotspot[weiter_button].keep, true);
+    set(hotspot[weiter_button].enabled, true);
+    set(hotspot[weiter_button].onclick, removeInfo());
+    set(hotspot[weiter_button].distorted, true);
+</action>
+
+	<action name="removeInfo">
+		alpha_enable('random_info_spot', '0', 'false');
+		alpha_enable('weiter_button', '0', 'false');
+		alpha_enable('info_hotspot_icon', '1', 'true');
+	</action>
 
 	
 	<scene name="scene_huette" title="huette" onstart="" thumburl="panos/huette.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -82,6 +145,13 @@
 		<image>
 			<cube url="panos/huette.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
 		</image>
+
+		<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-140" atv="10" alpha="0" enabled="false" 
+		onclick="random_info('Wusstest du dass 30 Prozent der Landfläche der Erde mit Wald bedeckt sind?');" 
+	/>
+		<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="100" atv="50" alpha="0" enabled="false" 
+		onclick="openurl('https://rebeccachemata13.github.io/IFD/krpanoTour/tour.html', _self);"
+	/>
 
 	</scene>
 
