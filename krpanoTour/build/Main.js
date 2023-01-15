@@ -6,14 +6,12 @@ var VRExplorer;
     let iconDiv = document.getElementById("infoIcon");
     let infoIcon = document.createElement("img");
     let firstCommentBox = document.getElementById("firstCommentBox");
-    let marker = document.getElementById("tour_link");
     let infoComment = document.getElementById("info-comment");
     let hotspotHuette = document.getElementById("huetteDiv");
     firstWeiterButton.addEventListener("click", firstHotspotClick);
     hotspotHuette.classList.add("invisibleDisabled");
     infoComment.innerHTML = "Schön, dass du dich entschieden hast im Wald spazieren zu gehen!<br><br>Klicke nun auf den ersten Hotspot, um deine Waldtour zu starten.";
     function firstHotspotClick() {
-        marker.classList.remove("disabled");
         firstCommentBox.classList.add("invisibleDisabled");
         infoIcon.src = "../ui/UI_icon_help.png";
         infoIcon.classList.add("infoIcon");
@@ -22,7 +20,6 @@ var VRExplorer;
         console.log(infoIcon);
     }
     function enableComment() {
-        marker.classList.add("disabled");
         firstCommentBox.classList.remove("invisibleDisabled");
         infoIcon.remove();
     }

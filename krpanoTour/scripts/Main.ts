@@ -5,7 +5,6 @@ namespace VRExplorer {
     let iconDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("infoIcon");
     let infoIcon: HTMLImageElement = <HTMLImageElement>document.createElement("img");
     let firstCommentBox: HTMLDivElement = <HTMLDivElement>document.getElementById("firstCommentBox");
-    let marker: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("tour_link");
     let infoComment: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("info-comment");
 
     let hotspotHuette: HTMLImageElement = <HTMLImageElement>document.getElementById("huetteDiv");
@@ -16,7 +15,6 @@ namespace VRExplorer {
     infoComment.innerHTML = "Schön, dass du dich entschieden hast im Wald spazieren zu gehen!<br><br>Klicke nun auf den ersten Hotspot, um deine Waldtour zu starten.";
 
     function firstHotspotClick(): void {
-        marker.classList.remove("disabled");
         firstCommentBox.classList.add("invisibleDisabled");
         infoIcon.src = "../ui/UI_icon_help.png";
         infoIcon.classList.add("infoIcon");
@@ -26,7 +24,6 @@ namespace VRExplorer {
     }
 
     function enableComment(): void {
-        marker.classList.add("disabled");
         firstCommentBox.classList.remove("invisibleDisabled");
         
         infoIcon.remove();

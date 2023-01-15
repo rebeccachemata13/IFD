@@ -13,8 +13,8 @@
 
 <action name="toggleInventar">
     alpha_enable('inventar', '1', false);
-    set(hotspot[inventar].atv, calc(get(view.vlookat) - 20));
-    set(hotspot[inventar].ath, get(view.hlookat));
+    set(hotspot[inventar].atv, calc(get(hotspot[mushroom_hotspot].atv) - 30));
+    set(hotspot[inventar].ath, calc(get(hotspot[mushroom_hotspot].ath) - 30));
     tween(hotspot[mushroom_hotspot].alpha, 1);
     tween(hotspot[mushroom_hotspot].enabled, false);
     tween(hotspot[mushroom_hotspot].scale, 0.08);
