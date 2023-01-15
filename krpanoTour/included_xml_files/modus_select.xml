@@ -5,6 +5,21 @@
         set(layer["form"].y, calc(stageheight/2));
 </action>
 
+<layer name="exit_button"
+            url="../skin/Icon_Exit.png"
+            alpha="1"
+            keep="true"
+            edge="center"
+            x="10%"
+            y="10%"
+            width= "100px"
+            height= "100px"
+            zorder="10"
+            onover.addevent="tween(scale,1.2);"
+	        onout.addevent="tween(scale,1);"
+            onclick= "openurl('https://rebeccachemata13.github.io/IFD/krpanoTour/underpages/map.html', _self);"
+        />
+
 <layer name="form"
         url="../images/holzbrett.png"
         bgalpha= "1"
@@ -224,7 +239,6 @@
 
             ,
                 apply_popup_delete();
-                loadscene(scene_herbstwald_panorama, null, MERGE, BLEND(0.6));
                 alpha_enable('info_hotspot_icon', '1', 'true');
                 alpha_enable('info_text', '1', 'false');
             );

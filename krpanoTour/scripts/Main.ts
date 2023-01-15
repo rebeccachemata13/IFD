@@ -42,6 +42,5 @@ namespace VRExplorer {
     }
 
     enableHotspots();
-
 }
 

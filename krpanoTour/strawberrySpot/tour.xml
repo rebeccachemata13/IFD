@@ -71,12 +71,12 @@
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
 
-	<action name="startup" autorun="onstart">
+	<!-- <action name="startup" autorun="onstart">
 		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene["0"].name); );
 		loadscene(get(startscene), null, MERGE);
 		if(startactions !== null, startactions() );
 		
-	</action>
+	</action> -->
 
 	<action name="alpha_enable_layer">
         	set(layer[%1].alpha, %2);
@@ -133,8 +133,15 @@
 		alpha_enable('info_hotspot_icon', '1', 'true');
 	</action>
 
+	<action name="warningInfo">
+		alpha_enable('arrow_info', '1', 'false');
+		set(hotspot[arrow_info].ath, get(view.hlookat));
+		set(hotspot[arrow_info].atv, get(view.vlookat));
+		delayedcall(3, openurl('https://rebeccachemata13.github.io/IFD/krpanoTour/tour.html', _self));"
+	</action>
+
 	
-	<scene name="scene_huette" title="huette" onstart="" thumburl="panos/huette.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_huette" title="huette" onstart="" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -150,7 +157,7 @@
 		onclick="random_info('Wusstest du dass 30 Prozent der Landfläche der Erde mit Wald bedeckt sind?');" 
 	/>
 		<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="100" atv="50" alpha="0" enabled="false" 
-		onclick="openurl('https://rebeccachemata13.github.io/IFD/krpanoTour/tour.html', _self);"
+		onclick="warningInfo()"
 	/>
 
 	</scene>

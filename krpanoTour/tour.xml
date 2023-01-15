@@ -77,12 +77,12 @@
 	Actions/Funcionalities
 	////////////////////////////////////////////////////////////////////// -->
 
-	<action name="startup" autorun="onstart">
+	<!-- <action name="startup" autorun="onstart">
 		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene["0"].name); );
 		loadscene(get(startscene), null, MERGE);
 		if(startactions !== null, startactions() );
 		
-	</action>
+	</action> -->
 
 	<action name="alpha_enable_layer">
         	set(layer[%1].alpha, %2);
@@ -111,7 +111,7 @@
 	Scenes
 	//////////////////////////////////////////////////////////////////////-->
 	
-	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="textChanger()" thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="textChanger()" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -128,7 +128,7 @@
 		/>
 
 		<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="25" atv="17" alpha="0" enabled="false" 
-			onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6));"
+			onclick="loadscene(scene_herbstwald_panorama_2)"
 		/>
 
 		<hotspot name="info_text" style="skin_hotspotstyle_info_text" html=""
@@ -143,8 +143,7 @@
 	<scene name="scene_herbstwald_panorama_2" title="herbstwald_panorama_2" 
 		onstart="alpha_enable('info_text_finished', '1', 'false'); 
 		delayedcall(5, removehotspot(info_text_finished));
-		delayedcall(5, set(hotspot[info_hotspot_icon].enabled, true))"
-		thumburl="panos/herbstwald_panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		delayedcall(5, set(hotspot[info_hotspot_icon].enabled, true))" lat="" lng="" heading=""> -->
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 

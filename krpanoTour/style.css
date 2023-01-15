@@ -62,11 +62,11 @@ button{
 
 .invisibleDisabled{
     display: none;
-    pointer-events: none
+    pointer-events: none;
 }
 
 .disabled{
-    pointer-events: none
+    pointer-events: none;
 }
 
 .infoIcon{

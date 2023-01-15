@@ -1,4 +1,20 @@
 <krpano>
+
+<hotspot name="arrow_info"
+        type="text"
+        style="skin_hotspotstyle_info_text"
+        html="Du wirst nun zum Hotspot davor geleitet. Mach dich bereit."
+        alpha= "0"
+        enabled= "false"
+        keep="true"
+        edge="center"
+        width= "300px"
+        height= "150px"
+        zorder="10"
+        ath="40"
+/> 
+
+
 <hotspot name="inventar_icon"
         url="../skin/Icons_Inventar.png"
         alpha= "0"
