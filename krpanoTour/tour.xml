@@ -101,6 +101,29 @@
 		alpha_enable('info_hotspot_icon', '1', 'true');
 	</action>
 
+	<action name= "responsiveMobile">
+	showlog();
+	trace("Reponsive");
+		if(device.mobile,
+			trace("how the hell");
+			set(layer[exit_button].scale, 0.8);
+			set(layer[form].scale, 0.8);
+			set(layer[infotext].width, 320 px);
+			set(layer[infotext].css, 'font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 15px; font-weight:500');
+			set(layer[infotext].y, '73%');
+			set(layer[infotext2].width, 320 px);
+			set(layer[infotext2].css, 'font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 15px; font-weight:500');
+			set(layer[infotext2].y, '85%');
+			set(layer[threehundertsixty_degrees].scale, '0.8');
+			set(layer[vr-glasses].scale, '0.8');
+			set(layer[label_Cardboard].css, 'font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: medium; font-weight:500');
+			set(layer[label_Cardboard].y, '74%');
+			set(layer[label_360].css, 'font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: medium; font-weight:500');
+			set(layer[label_360].y, '74%');
+
+		);
+	</action>
+
 	
 	
 		<!--//////////////////////////////////////////////////////////////////////
@@ -111,7 +134,8 @@
 	Scenes
 	//////////////////////////////////////////////////////////////////////-->
 	
-	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="textChanger()" lat="" lng="" heading="">
+	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="textChanger();
+	responsiveMobile();" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 

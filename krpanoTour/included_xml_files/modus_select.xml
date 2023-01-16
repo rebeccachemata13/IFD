@@ -33,12 +33,12 @@
         interactivecontent= "true"
         x=""
         y=""
-        onloaded="set(x,calc(get(area.pixelwidth)/2));set(y,calc((get(area.pixelheight)/2) - 50));"
+        onloaded="set(x,calc(get(area.pixelwidth)/2));set(y,calc((get(area.pixelheight)/2) - 50)); responsiveMobile();"
     >   
 
     <layer name="infotext"
             type= "text"
-            html= "Suchen dir den gewünschten Modus aus, mit dem du fortfahren möchtest."
+            html= "Suche dir den gewünschten Modus aus, mit dem du fortfahren möchtest."
             bgalpha= "0"
             css= "font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#eabe8f; text-align: center; font-size: 21px; font-weight:500"
             enabled="false"

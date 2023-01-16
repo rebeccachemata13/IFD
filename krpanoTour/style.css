@@ -44,7 +44,7 @@ button{
     float:right;
     margin-right: 30px;
     margin-top: 30px;
-}
+} 
 
 .info_comment{
     font-size: large;
@@ -52,7 +52,7 @@ button{
 }
 
 .hotspot img{
-    width: 50px;
+    width: 110px;
 }
 
 #hotspot_container{
@@ -75,4 +75,45 @@ button{
     margin-right: 30px;
     margin-top: 30px;
     cursor: pointer;
+}
+
+@media screen and (max-width:1200px){
+    .infoBox{
+        border: 10px solid #3f2722;
+        width: 80%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 300px;
+    }
+      
+}
+
+@media screen and (max-width:600px){
+    .infoBox{
+        border: 10px solid #3f2722;
+        width: 95%;
+        height: 50%;
+        margin-top: 50%;
+    }
+      
+    button{
+        width:150px;
+        padding: 10px;
+        font-size: large;
+    
+    }
+
+    .hotspot img{
+        width: 80px;
+    }
+
+     .commentBox{
+        background: url("https://rebeccachemata13.github.io/IFD/krpanoTour/images/holz.png");
+        border: 7px solid #3f2722;
+        width: 250px;
+        padding: 10px;
+        margin-left: auto;
+        margin-top: 50%;
+    }
 }

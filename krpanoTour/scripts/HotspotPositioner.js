@@ -42,10 +42,10 @@ RepositionHotspots();
 function RepositionHotspots(){
 	hotspotHerbstwald.style.marginLeft = (card.offsetWidth * relPos[0].xPos) + "px";
     hotspotHerbstwald.style.marginTop = (card.offsetHeight * relPos[0].yPos) + "px";
-    imageSpotHerbstwald.style.width = (card.offsetWidth * 0.07) + "px";
+    // imageSpotHerbstwald.style.width = (card.offsetWidth * 0.08) + "px";
     hotspotHuette.style.marginLeft = (card.offsetWidth * relPos[1].xPos) + "px";
     hotspotHuette.style.marginTop = (card.offsetHeight * relPos[1].yPos) + "px";
-    imageSpotHuette.style.width = (card.offsetWidth * 0.07) + "px";
+    // imageSpotHuette.style.width = (card.offsetWidth * 0.08) + "px";
 
 }
 
@@ -54,8 +54,8 @@ setTimeout(positionHotspots, 1000);
 window.addEventListener('resize', function(event) {
     hotspotHerbstwald.style.marginLeft = (card.offsetWidth * relPos[0].xPos) + "px";
     hotspotHerbstwald.style.marginTop = (card.offsetHeight * relPos[0].yPos) + "px";
-    imageSpotHerbstwald.style.width = (card.offsetWidth * 0.07) + "px";
+    // imageSpotHerbstwald.style.width = (card.offsetWidth * 0.1) + "px";
     hotspotHuette.style.marginLeft = (card.offsetWidth * relPos[1].xPos) + "px";
     hotspotHuette.style.marginTop = (card.offsetHeight * relPos[1].yPos) + "px";
-    imageSpotHuette.style.width = (card.offsetWidth * 0.07) + "px";
+    // imageSpotHuette.style.width = (card.offsetWidth * 0.1) + "px";
 }, true);

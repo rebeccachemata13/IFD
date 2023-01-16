@@ -24,6 +24,8 @@ var VRExplorer;
         infoIcon.remove();
     }
     function enableHotspots() {
+        var x = window.matchMedia("(max-width: 400px)");
+        var y = window.matchMedia("(max-width: 1100px)");
         console.log("Second Hotspot enabled");
         let currentPickerNumber = location.hash;
         console.log(location.hash);
@@ -31,6 +33,15 @@ var VRExplorer;
             hotspotHuette.classList.remove("invisibleDisabled");
             infoComment.innerHTML = "Super, du deinen ersten Spot geschafft und den Pilz gefunden!<br><br>Klicke nun auf den zweiten Hotspot, um deine Waldtour fortzuführen.";
             enableComment();
+            if (x.matches) {
+                firstCommentBox.style.marginTop = "400px";
+            }
+            else if (y.matches) {
+                firstCommentBox.style.marginTop = "300px";
+            }
+            else {
+                firstCommentBox.style.marginTop = "10px";
+            }
         }
     }
     enableHotspots();
