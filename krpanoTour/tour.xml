@@ -102,8 +102,8 @@
 	</action>
 
 	<action name= "responsiveMobile">
-	showlog();
-	trace("Reponsive");
+	//showlog();
+	//trace("Reponsive");
 		if(device.mobile,
 			trace("how the hell");
 			set(layer[exit_button].scale, 0.8);
