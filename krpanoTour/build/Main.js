@@ -31,7 +31,7 @@ var VRExplorer;
         console.log(location.hash);
         if (currentPickerNumber == "#1") {
             hotspotHuette.classList.remove("invisibleDisabled");
-            infoComment.innerHTML = "Super, du deinen ersten Spot geschafft und den Pilz gefunden!<br><br>Klicke nun auf den zweiten Hotspot, um deine Waldtour fortzuführen.";
+            infoComment.innerHTML = "Super, du hast deinen ersten Spot geschafft und den Pilz gefunden!<br><br>Klicke nun auf den zweiten Hotspot, um deine Waldtour fortzuführen.";
             enableComment();
             if (x.matches) {
                 firstCommentBox.style.marginTop = "400px";
