@@ -31,10 +31,17 @@ button{
     width:150px;
     padding: 10px;
     border-color: grey;
-    margin-top: 60px;
+    margin-top: 50px;
+    margin-bottom: 15px;
     background-color: #3f2722;
     color: white;
+    cursor:pointer;
+    transition: 0.3s;
 
+}
+
+button:hover{
+    width: 200px;
 }
 .commentBox{
     background: url("https://rebeccachemata13.github.io/IFD/krpanoTour/images/holz.png");
@@ -53,6 +60,11 @@ button{
 
 .hotspot img{
     width: 110px;
+    transition: 0.3s;
+}
+
+.hotspot img:hover{
+    width: 120px;
 }
 
 #hotspot_container{
