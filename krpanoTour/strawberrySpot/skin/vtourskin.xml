@@ -292,9 +292,9 @@
 	       linkedscene_lookat=""
 	       onclick="skin_hotspotstyle_click();"
 	       depth="1000"
-	       scale="0.5"
-	       onover.addevent="tween(scale,0.7);"
-	       onout.addevent="tween(scale,0.5);"
+	       scale="0.3"
+	       onover.addevent="tween(scale,0.5);"
+	       onout.addevent="tween(scale,0.3);"
 	       onloaded.addevent="skin_hotspotstyle_setup();"
 	       />
 

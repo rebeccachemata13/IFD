@@ -84,6 +84,8 @@
 		
 	</action> -->
 
+	preloadsound(Cold wind sound effect.mp3);
+
 	<action name="alpha_enable_layer">
         	set(layer[%1].alpha, %2);
         	set(layer[%1].enabled, %3);   
@@ -133,26 +135,41 @@
 	<!--//////////////////////////////////////////////////////////////////////
 	Scenes
 	//////////////////////////////////////////////////////////////////////-->
+
+	<plugin name="soundinterface"
+	        url.flash="%VIEWER%/plugins/soundinterface.swf"
+	        url.html5="%VIEWER%/plugins/soundinterface.js"
+	        rootpath=""
+	        preload="true"
+	        keep="true"
+			volume="0.3"
+	        />
+
+	<!-- start playing the sound -->
+	<events name="currentpano"
+	        onnewpano="playsound(bgsnd, Cold wind sound effect.mp3);"
+	        onremovepano="stopsound(bgsnd);"
+	        />
 	
-	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="textChanger();
+	<scene name="scene_herbstwald_panorama" title="herbstwald_panorama" onstart="textChanger();playsound(bgsnd, Cold wind sound effect.mp3);
 	responsiveMobile();" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/herbstwald_panorama.tiles/preview.jpg" />
+		<preview url="panos/Start_Szene.tiles/preview.jpg" />
 
 		<image>
-			<cube url="panos/herbstwald_panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
+			<cube url="panos/Start_Szene.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
 		</image>
 
-		<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="25" atv="17" alpha="0" enabled="false" 
+		<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="40" atv="0" alpha="0" enabled="false" 
 			onclick="random_info('Wusstest du dass Wälder länger halten wenn man sie nicht anzündet?')" 
 		/>
 
-		<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="25" atv="17" alpha="0" enabled="false" 
-			onclick="loadscene(scene_herbstwald_panorama_2)"
+		<hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="0" atv="30" alpha="0" enabled="false" 
+			onclick="loadscene(scene_herbstwald_panorama_2, null, MERGE, BLEND(0.6))"
 		/>
 
 		<hotspot name="info_text" style="skin_hotspotstyle_info_text" html=""
@@ -173,13 +190,13 @@
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/herbstwald_panorama.tiles/preview.jpg" />
+		<preview url="panos/Second_Scene.tiles/preview.jpg" />
 
 		<image>
-			<cube url="panos/herbstwald_panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
+			<cube url="panos/Second_Scene.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280" />
 		</image>
 
-	<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-49" atv="10" alpha="1" enabled="false" 
+	<hotspot name="info_hotspot_icon" style="skin_hotspotstyle_info" ath="-49" atv="5" alpha="1" enabled="false" 
 		onclick="random_info('Wusstest du dass Wälder länger halten wenn man sie nicht anzündet?'); set(hotspot[weiter_button].onclick, removeInfo())" 
 	/>
 	<!-- <hotspot name="arrow_hotspot" style="skin_hotspotstyle_arrow" ath="70" atv="55" alpha="1" enabled="true" 
@@ -189,9 +206,9 @@
 		url="https://rebeccachemata13.github.io/IFD/krpanoTour/images/mushroom.png"
 		alpha="1"
 		onclick= "toggleInventar()"
-		scale= "0.06"
-		atv= "50"
-		ath="-190"
+		scale= "0.04"
+		atv= "13"
+		ath="-120"
 		distorted="true"
 	/>
 

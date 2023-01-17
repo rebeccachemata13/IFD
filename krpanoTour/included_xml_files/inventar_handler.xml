@@ -22,7 +22,6 @@
     tween(hotspot[mushroom_hotspot].ath, calc(get(hotspot[inventar].ath) - 15.5));
     tween(hotspot[mushroom_hotspot].atv, calc(get(hotspot[inventar].atv) - 8));
     
-    jscall("VRExplorer.Main.enableHotspots(1)");
     delayedcall(4, alpha_enable('inventar', '0', 'false')); 
     delayedcall(4, alpha_enable('mushroom_hotspot', '0', 'false')); 
     <!-- delayedcall(5, alpha_enable_layer('inventar_icon', '1', 'true'));  -->
