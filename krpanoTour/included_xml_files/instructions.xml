@@ -34,6 +34,8 @@
     set(hotspot[weiter_button].distorted, false);
     set(hotspot[weiter_button].keep, true);
     set(hotspot[weiter_button].enabled, true);
+    set(hotspot[weiter_button].onover, tween(width, 190px));
+    set(hotspot[weiter_button].onout, tween(width, 85px));
     set(hotspot[weiter_button].onclick, instruction_moving());
     set(hotspot[weiter_button].distorted, true);
     
